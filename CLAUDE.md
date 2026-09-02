@@ -52,6 +52,22 @@ La sezione contatti contiene **recapiti veri** dell'associazione, IBAN compreso.
 qualsiasi modifica lì, chiedere: sono dati di un ente reale su una pagina che l'ente non
 controlla.
 
+`work-in-progress.html` è la pagina di attesa da mettere sul dominio vero appena sarà attivo,
+finché il sito non ha i dati reali dei gatti. È **esclusa da GitHub Pages** tramite
+`_config.yml`: resta versionata ma non viene servita dall'anteprima. I suoi percorsi sono
+relativi alla radice del repo, quindi non va spostata in una sottocartella senza correggerli.
+
+### Quando si passa al dominio vero
+
+1. Togliere `robots.txt` e il `<meta name="robots">` da `index.html`: servono solo a tenere
+   l'anteprima fuori dai motori.
+2. Togliere il `<meta name="robots">` anche da `work-in-progress.html`. **Questa pagina, sul
+   dominio, deve essere indicizzabile**: è il contrario di quanto vale ora su GitHub Pages.
+   Su un dominio nuovo una pagina con denominazione, contatti e indirizzo aiuta i motori a
+   capire di chi è il dominio, e chi cerca l'associazione trova almeno i recapiti.
+3. Rimuovere `_config.yml`, che serve solo all'anteprima.
+4. Impostare il redirect 301 da `amiciperlavitabrescia.com` a `amiciperlavitabrescia.it`.
+
 ### Foto
 
 Le foto in `immagini/` sono **reali**, scattate al gattile: gatti che sono ospiti adesso e
