@@ -1,0 +1,4 @@
+# GitHub Pages pubblica tutto il repository: qui si tiene fuori la pagina di
+# attesa, che è pronta per il dominio vero ma non va servita dall'anteprima.
+exclude:
+  - work-in-progress.html
