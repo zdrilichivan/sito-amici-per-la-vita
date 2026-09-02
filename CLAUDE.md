@@ -17,6 +17,13 @@ Tutti i contenuti sono di esempio e la pagina lo dichiara nella barra in cima
 - I recapiti nella sezione contatti (indirizzo, telefono, email, Instagram e **IBAN**) sono
   quelli **veri** dell'associazione. Non modificarli, non completarli a intuito e non
   aggiungerne altri: se serve un dato che non c'è, chiederlo.
+- **Due nomi, due usi.** La denominazione registrata è *A.MICI PER LA VITA — ORGANIZZAZIONE
+  DI VOLONTARIATO* (iscritta al RUNTS, sezione ETS) e va usata solo dove compaiono i dati
+  fiscali, cioè la riga in fondo al footer. Ovunque altro — titolo, meta, testi, footer
+  descrittivo — si usa il nome con cui sono conosciuti, *A.mici per la vita Brescia ODV*,
+  coerente con la loro email e i loro profili social. "Brescia" serve a distinguerli dagli
+  altri "amici per la vita", ma non fa parte della denominazione legale: non aggiungerlo
+  accanto al codice fiscale.
 - Il codice fiscale `98186780171` e l'IBAN sono **confermati**: il 2 settembre 2026
   l'associazione ha fornito il proprio biglietto con i dati ufficiali, e coincidono
   carattere per carattere con quelli nel sito.
