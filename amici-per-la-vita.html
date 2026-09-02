@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A.mici per la vita Brescia ODV — Gatti in adozione a Brescia</title>
+<meta name="description" content="A.mici per la vita Brescia ODV: accogliamo, curiamo e troviamo casa ai gatti di Brescia. Scopri i mici in adozione, le colonie che seguiamo e come darci una mano.">
+<link rel="icon" type="image/svg+xml" href="assets/logo-icona.svg">
+<link rel="icon" type="image/jpeg" href="assets/logo-icona.jpg">
+<link rel="apple-touch-icon" href="assets/logo-icona.jpg">
+<meta property="og:title" content="A.mici per la vita Brescia ODV">
+<meta property="og:description" content="Accogliamo, curiamo e troviamo casa ai gatti di Brescia. Scopri i mici in adozione e come darci una mano.">
+<meta property="og:image" content="assets/logo-completo.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crema:#F7F1E4;
+  --panna:#FDFAF4;
+  --salvia:#6B7A52;
+  --salvia-scuro:#4E5A3B;
+  --salvia-chiaro:#93A17A;
+  --rosa:#C4838D;
+  --rosa-scuro:#A96872;
+  --rosa-chiaro:#EFCFD2;
+  --inchiostro:#22314A;
+  --ambra:#F0B45E;
+  --display:'Baloo 2', system-ui, sans-serif;
+  --testo:'Nunito Sans', system-ui, sans-serif;
+  --mano:'Caveat', cursive;
+  --max:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--crema); color:var(--inchiostro);
+  font-family:var(--testo); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+h1,h2,h3,h4{font-family:var(--display); line-height:1.08; margin:0; font-weight:700; letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,6.4vw,4.3rem); font-weight:800}
+h2{font-size:clamp(2rem,4.4vw,3rem)}
+h3{font-size:1.32rem}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{width:100%; max-width:var(--max); margin:0 auto; padding:0 22px}
+.sez{padding:88px 0}
+.mano{font-family:var(--mano); font-size:1.6rem; color:var(--rosa-scuro); line-height:1.2}
+.intro{max-width:60ch}
+:focus-visible{outline:3px solid var(--ambra); outline-offset:3px; border-radius:6px}
+
+/* ---------- barra demo ---------- */
+.demo-bar{background:var(--salvia-scuro); color:#fff; font-size:.82rem; text-align:center; padding:7px 16px; letter-spacing:.01em}
+
+/* ---------- nav ---------- */
+header.nav{position:sticky; top:0; z-index:60; background:rgba(247,241,228,.93); backdrop-filter:blur(10px); border-bottom:1px solid rgba(34,49,74,.1)}
+.nav-in{display:flex; align-items:center; gap:18px; height:90px}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; margin-right:auto}
+.brand-logo{width:118px; height:auto; flex:none}
+.brand b{font-family:var(--display); font-size:1.42rem; display:block; line-height:1.05}
+.brand b i{font-style:normal; color:var(--salvia)}
+.brand span{font-size:.8rem; letter-spacing:.13em; color:var(--rosa-scuro); font-weight:700; text-transform:uppercase}
+.menu{display:flex; gap:26px; align-items:center}
+.menu > *{flex:none}
+.menu a{text-decoration:none; font-weight:600; font-size:.97rem; padding:4px 0; border-bottom:2px solid transparent}
+.menu a:hover{border-color:var(--rosa)}
+/* il bottone nel menu non deve ereditare padding e bordo di .menu a */
+.menu a.btn{padding:11px 24px; font-size:.92rem; border-bottom:0}
+.menu a.btn:hover{border-color:transparent}
+.btn{display:inline-block; border:0; cursor:pointer; font-family:var(--testo); font-weight:700; font-size:1rem;
+  line-height:1.2; white-space:nowrap; text-align:center;
+  padding:13px 26px; border-radius:999px; text-decoration:none; transition:transform .15s ease, background .15s ease}
+.btn-rosa{background:var(--rosa); color:#fff; box-shadow:0 6px 0 var(--rosa-scuro)}
+.btn-rosa:hover{transform:translateY(2px); box-shadow:0 4px 0 var(--rosa-scuro)}
+.btn-salvia{background:var(--salvia); color:#fff; box-shadow:0 6px 0 var(--salvia-scuro)}
+.btn-salvia:hover{transform:translateY(2px); box-shadow:0 4px 0 var(--salvia-scuro)}
+.btn-vuoto{background:transparent; color:var(--salvia-scuro); border:2px solid var(--salvia); padding:11px 24px}
+.btn-vuoto:hover{background:rgba(107,122,82,.1)}
+.btn-sm{padding:10px 22px; font-size:.9rem}
+.hamb{display:none; background:none; border:2px solid rgba(34,49,74,.2); border-radius:12px; width:44px; height:40px; cursor:pointer; align-items:center; justify-content:center}
+.hamb span{display:block; width:20px; height:2px; background:var(--inchiostro); position:relative}
+.hamb span::before,.hamb span::after{content:''; position:absolute; left:0; width:20px; height:2px; background:var(--inchiostro)}
+.hamb span::before{top:-6px} .hamb span::after{top:6px}
+
+/* ---------- hero ---------- */
+.hero{position:relative; padding:56px 0 20px; overflow:hidden}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center}
+.hero h1{margin:.25em 0 .35em}
+.hero p.lead{font-size:1.18rem; max-width:46ch; color:#3a4a63}
+.cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:26px}
+.hero-note{margin-top:26px; display:flex; align-items:center; gap:10px; font-size:.95rem; color:#4b5a72}
+.hero-note svg{width:26px;height:26px;flex:none}
+.hero-art{position:relative}
+.hero-scatto{position:relative; width:100%; max-width:500px; margin:0 auto; aspect-ratio:4/3;
+  background:var(--panna); border-radius:28px; overflow:hidden; box-shadow:0 18px 40px rgba(34,49,74,.10)}
+.hero-scatto img{width:100%; height:100%; object-fit:cover}
+.hero-scatto figcaption{position:absolute; left:14px; bottom:14px; background:rgba(253,250,244,.94);
+  font-size:.78rem; font-weight:700; color:var(--salvia-scuro); padding:6px 13px; border-radius:999px}
+.doodle{position:absolute; opacity:.9; pointer-events:none; z-index:2}
+.d1{width:34px; top:2%; left:-14px; color:var(--rosa)}
+.d2{width:22px; top:6%; right:-6px; color:var(--salvia-chiaro)}
+.d3{width:28px; bottom:8%; right:-12px; color:var(--ambra)}
+
+/* ---------- onde ---------- */
+.onda{display:block; width:100%; height:auto; margin-bottom:-1px}
+.onda + .sez, .sez.attaccata{padding-top:36px}
+.su-salvia{background:var(--salvia); color:#F4F2E8}
+.su-salvia h2{color:#fff}
+.su-rosa{background:var(--rosa-chiaro)}
+.su-panna{background:var(--panna)}
+
+/* ---------- numeri ---------- */
+.numeri{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; text-align:center}
+.numeri b{display:block; font-family:var(--display); font-size:clamp(2rem,4vw,2.9rem); line-height:1; color:#fff}
+.numeri b i{display:block; font-family:var(--testo); font-style:normal; font-weight:700;
+  font-size:.3em; letter-spacing:.05em; opacity:.85; margin-bottom:4px; text-transform:uppercase}
+.numeri span{font-size:.93rem; opacity:.92}
+
+/* ---------- chi siamo ---------- */
+.duecol{display:grid; grid-template-columns:1fr 1fr; gap:54px; align-items:start}
+.valori{display:grid; gap:18px; margin-top:8px}
+.valore{display:flex; gap:16px; align-items:flex-start}
+.valore .pit{flex:none; width:46px; height:46px; border-radius:14px; display:grid; place-items:center; background:var(--rosa-chiaro)}
+.valore:nth-child(2) .pit{background:#DDE4CE}
+.valore:nth-child(3) .pit{background:#FAE2BF}
+.valore .pit svg{width:24px;height:24px; color:var(--inchiostro)}
+.valore h3{font-size:1.1rem; margin-bottom:2px}
+.valore p{margin:0; font-size:.97rem; color:#4b5a72}
+
+/* ---------- galleria foto ---------- */
+.galleria{column-count:4; column-gap:14px; margin-top:32px}
+.galleria figure{break-inside:avoid; margin:0 0 14px; border-radius:20px; overflow:hidden;
+  background:#E7E0D2; box-shadow:0 3px 0 rgba(34,49,74,.06)}
+.galleria img{width:100%; height:auto; transition:transform .5s ease}
+.galleria figure:hover img{transform:scale(1.045)}
+.gall-nota{margin:24px 0 0; font-size:.92rem; color:#5b6a80; max-width:62ch}
+
+/* ---------- gatti ---------- */
+.filtri{display:flex; gap:10px; flex-wrap:wrap; margin:26px 0 30px}
+.chip{border:2px solid rgba(34,49,74,.16); background:transparent; font-family:var(--testo); font-weight:700; font-size:.92rem;
+  padding:8px 17px; border-radius:999px; cursor:pointer; transition:background .15s, border-color .15s, color .15s}
+.chip:hover{border-color:var(--salvia)}
+.chip[aria-pressed="true"]{background:var(--salvia); border-color:var(--salvia); color:#fff}
+.griglia{display:grid; grid-template-columns:repeat(auto-fill,minmax(238px,1fr)); gap:24px}
+.gatto{background:var(--panna); border-radius:26px; overflow:hidden; box-shadow:0 3px 0 rgba(34,49,74,.07); display:flex; flex-direction:column}
+.gatto.nascosto{display:none}
+.ritratto{position:relative; aspect-ratio:4/3; background:var(--bg,#EAEFE0); display:grid; place-items:center}
+.ritratto svg.faccia{width:58%; height:auto}
+.ritratto .zampa{position:absolute; width:26px; opacity:.4; color:#fff}
+.ritratto .zampa.a{top:12px; right:16px}
+.ritratto .zampa.b{bottom:14px; left:14px; width:18px; transform:rotate(-20deg)}
+.tag{position:absolute; top:12px; left:12px; background:rgba(253,250,244,.95); font-size:.74rem; font-weight:700;
+  padding:4px 11px; border-radius:999px; letter-spacing:.02em}
+.gatto .testo{padding:18px 20px 22px; display:flex; flex-direction:column; gap:8px; flex:1}
+.gatto h3{display:flex; align-items:baseline; gap:8px}
+.gatto h3 small{font-family:var(--testo); font-size:.83rem; font-weight:600; color:#66748c}
+.gatto p{margin:0; font-size:.95rem; color:#4b5a72; flex:1}
+.gatto .btn{align-self:flex-start; margin-top:6px}
+.vuoto-msg{padding:30px 0; color:#5b6a80}
+
+/* ---------- passi ---------- */
+.passi{display:grid; grid-template-columns:repeat(4,1fr); gap:26px; margin-top:34px; position:relative}
+.passo{position:relative}
+.passo .num{width:52px; height:52px; border-radius:50%; background:var(--panna); display:grid; place-items:center;
+  font-family:var(--display); font-weight:700; font-size:1.25rem; color:var(--salvia-scuro); margin-bottom:14px; position:relative; z-index:2}
+.passo h3{font-size:1.08rem; margin-bottom:4px}
+.passo p{font-size:.95rem; margin:0; color:#4b5a72}
+.linea{position:absolute; top:26px; left:26px; right:26px; height:2px; z-index:1;
+  background:repeating-linear-gradient(90deg,rgba(34,49,74,.22) 0 8px,transparent 8px 16px)}
+
+/* ---------- guida / accordion ---------- */
+.guida{display:grid; grid-template-columns:.9fr 1.1fr; gap:50px; align-items:start}
+.card-guida{background:var(--salvia); color:#fff; border-radius:30px; padding:34px; position:relative; overflow:hidden}
+.card-guida h3{color:#fff; font-size:1.9rem; margin-bottom:6px}
+.card-guida .script{font-family:var(--mano); font-size:2.1rem; color:var(--rosa-chiaro); line-height:1}
+.card-guida p{opacity:.94; font-size:.98rem}
+.card-guida .btn{margin-top:6px}
+.acc{border-top:1px solid rgba(34,49,74,.15)}
+.acc-item{border-bottom:1px solid rgba(34,49,74,.15)}
+.acc-tit{width:100%; background:none; border:0; cursor:pointer; font-family:var(--display); font-weight:700; font-size:1.12rem;
+  color:var(--inchiostro); text-align:left; padding:18px 40px 18px 0; position:relative; display:block}
+.acc-tit::after{content:''; position:absolute; right:8px; top:50%; width:11px; height:11px; margin-top:-8px;
+  border-right:2.5px solid var(--salvia); border-bottom:2.5px solid var(--salvia); transform:rotate(45deg); transition:transform .22s ease}
+.acc-tit[aria-expanded="true"]::after{transform:rotate(-135deg); margin-top:-3px}
+.acc-corpo{display:grid; grid-template-rows:0fr; transition:grid-template-rows .26s ease}
+.acc-corpo>div{overflow:hidden}
+.acc-item.aperto .acc-corpo{grid-template-rows:1fr}
+.acc-corpo p{padding:0 0 20px; margin:0; color:#41506a; max-width:62ch}
+
+/* ---------- aiutare ---------- */
+.aiuti{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px; margin-top:34px}
+.aiuto{background:rgba(253,250,244,.14); border:1.5px solid rgba(255,255,255,.35); border-radius:24px; padding:24px}
+.aiuto h3{color:#fff; font-size:1.15rem; margin-bottom:6px}
+.aiuto p{font-size:.95rem; margin:0; opacity:.94}
+.aiuto .costo{font-family:var(--display); font-size:1.5rem; color:var(--ambra); display:block; margin-bottom:2px}
+
+/* ---------- storie ---------- */
+.storie{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:34px}
+.storia{background:var(--panna); border-radius:26px; padding:26px}
+.storia p{font-size:1.02rem; color:#31405a}
+.storia .firma{display:flex; align-items:center; gap:11px; margin-top:14px}
+.storia .firma svg{width:38px;height:38px}
+.storia .firma b{font-family:var(--display); font-size:.98rem; display:block; line-height:1.2}
+.storia .firma small{color:#66748c; font-size:.82rem}
+
+/* ---------- contatti ---------- */
+.contatti{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start}
+.info-riga{display:flex; gap:14px; padding:14px 0; border-bottom:1px dashed rgba(34,49,74,.22)}
+.info-riga svg{width:22px;height:22px;flex:none; color:var(--rosa-scuro); margin-top:3px}
+.info-riga b{font-family:var(--display); display:block; font-size:1rem}
+.info-riga span{font-size:.95rem; color:#41506a}
+form{background:var(--panna); border-radius:28px; padding:28px}
+label{display:block; font-weight:700; font-size:.9rem; margin-bottom:6px}
+input,textarea,select{width:100%; font-family:var(--testo); font-size:1rem; padding:12px 15px; border-radius:14px;
+  border:2px solid rgba(34,49,74,.16); background:#fff; color:var(--inchiostro); margin-bottom:16px}
+textarea{min-height:118px; resize:vertical}
+input:focus,textarea:focus,select:focus{outline:none; border-color:var(--salvia)}
+.esito{display:none; margin-top:14px; background:#E4EBD4; border-radius:14px; padding:13px 16px; font-size:.93rem}
+.esito.on{display:block}
+
+/* ---------- footer ---------- */
+footer{background:var(--inchiostro); color:#E9E4D8; padding:54px 0 26px; font-size:.95rem}
+.foot-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:36px}
+footer h4{font-family:var(--display); color:#fff; font-size:1.05rem; margin-bottom:10px}
+footer a{color:#E9E4D8; text-decoration:none; display:block; padding:3px 0}
+footer a:hover{color:var(--ambra)}
+.foot-logo{display:inline-block; background:var(--crema); border-radius:20px; padding:12px 16px; margin-bottom:12px}
+.foot-logo img{display:block; width:168px; height:auto}
+.foot-brand p{opacity:.75; max-width:34ch; font-size:.92rem}
+.chiusura{margin-top:36px; padding-top:18px; border-top:1px solid rgba(255,255,255,.16); display:flex; justify-content:space-between; gap:14px 26px; flex-wrap:wrap; font-size:.83rem; opacity:.72}
+.credito a{display:inline; text-decoration:underline; text-underline-offset:2px; padding:0}
+.credito a:hover{color:var(--ambra)}
+
+/* ---------- animazione di apertura ---------- */
+@keyframes alza{from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:none}}
+@keyframes spunta{from{opacity:0; transform:scale(.4)} to{opacity:.9; transform:scale(1)}}
+.hero-art .hero-scatto{animation:alza .7s cubic-bezier(.2,.8,.3,1) both}
+.doodle{animation:spunta .5s both}
+.d1{animation-delay:.9s} .d2{animation-delay:1.05s} .d3{animation-delay:1.2s}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important; transition:none !important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .hamb{display:flex}
+  .menu{position:fixed; inset:90px 0 auto 0; background:var(--crema); flex-direction:column; align-items:stretch;
+    gap:0; padding:12px 22px 24px; border-bottom:1px solid rgba(34,49,74,.12); display:none}
+  .menu.aperto{display:flex}
+  .menu a{padding:13px 0; border-bottom:1px solid rgba(34,49,74,.08)}
+  .menu a.btn{margin-top:14px; text-align:center}
+}
+@media (max-width:960px){
+  .hero-grid,.duecol,.guida,.contatti{grid-template-columns:1fr; gap:34px}
+  .passi{grid-template-columns:1fr 1fr}
+  .linea{display:none}
+  .storie{grid-template-columns:1fr}
+  .galleria{column-count:3}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero-art{order:-1}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .sez{padding:64px 0}
+  .numeri{grid-template-columns:1fr 1fr; gap:26px}
+  .passi{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .galleria{column-count:2}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== libreria di simboli ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-faccia" viewBox="0 0 100 100">
+    <g stroke="#22314A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 45 L17 13 L47 31 Z" fill="var(--fur,#D7DCC6)"/>
+      <path d="M79 45 L83 13 L53 31 Z" fill="var(--fur,#D7DCC6)"/>
+      <path d="M25 41 L23 22 L38 32 Z" fill="var(--orecchio,#EFCFD2)" stroke-width="2.2"/>
+      <path d="M75 41 L77 22 L62 32 Z" fill="var(--orecchio,#EFCFD2)" stroke-width="2.2"/>
+      <ellipse cx="50" cy="57" rx="34" ry="31" fill="var(--fur,#D7DCC6)"/>
+      <g stroke="var(--riga,transparent)" stroke-width="4" fill="none">
+        <path d="M50 27 v11 M37 30 l4 9 M63 30 l-4 9 M17 54 h13 M83 54 h-13 M19 66 h11 M81 66 h-11"/>
+      </g>
+      <ellipse cx="37" cy="54" rx="6.4" ry="7.4" fill="#fff" stroke-width="2.4"/>
+      <ellipse cx="63" cy="54" rx="6.4" ry="7.4" fill="#fff" stroke-width="2.4"/>
+      <path d="M45 67 L55 67 L50 72 Z" fill="var(--naso,#C4838D)" stroke-width="2"/>
+      <path d="M50 72 q-6 7 -12 2 M50 72 q6 7 12 2" fill="none" stroke-width="2.4"/>
+      <path d="M16 60 L2 56 M16 66 L2 68 M84 60 L98 56 M84 66 L98 68" fill="none" stroke-width="2.2"/>
+    </g>
+    <ellipse cx="37" cy="55" rx="2.8" ry="4.6" fill="#22314A"/>
+    <ellipse cx="63" cy="55" rx="2.8" ry="4.6" fill="#22314A"/>
+    <circle cx="39" cy="51" r="1.5" fill="#fff"/>
+    <circle cx="65" cy="51" r="1.5" fill="#fff"/>
+  </symbol>
+
+  <symbol id="i-zampa" viewBox="0 0 40 40">
+    <g fill="currentColor">
+      <ellipse cx="20" cy="27" rx="11" ry="9"/>
+      <ellipse cx="7" cy="16" rx="4.4" ry="5.6"/>
+      <ellipse cx="16" cy="10" rx="4.4" ry="6"/>
+      <ellipse cx="26" cy="10" rx="4.4" ry="6"/>
+      <ellipse cx="34" cy="16" rx="4.4" ry="5.6"/>
+    </g>
+  </symbol>
+
+  <symbol id="i-cuore" viewBox="0 0 40 36">
+    <path d="M20 34 C6 24 2 17 2 11.5 C2 6 6.4 2 11.4 2 C15 2 18.2 4 20 7 C21.8 4 25 2 28.6 2 C33.6 2 38 6 38 11.5 C38 17 34 24 20 34 Z"
+      fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="i-casa" viewBox="0 0 24 24"><path d="M3 11 L12 3 L21 11 M5 10 V21 H19 V10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cure" viewBox="0 0 24 24"><path d="M12 5 V19 M5 12 H19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-mani" viewBox="0 0 24 24"><path d="M3 13 L8 18 H16 L21 13 M7 13 V7 a2 2 0 0 1 4 0 v4 M11 11 V6 a2 2 0 0 1 4 0 v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22 C12 22 20 14.5 20 9.5 A8 8 0 1 0 4 9.5 C4 14.5 12 22 12 22 Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M5 3 h4 l2 5 -2.5 1.5 a12 12 0 0 0 6 6 L16 13 l5 2 v4 a2 2 0 0 1 -2 2 A17 17 0 0 1 3 5 a2 2 0 0 1 2 -2 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 7 L12 13.5 L21 7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-ora" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6.5 V12 L16 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/></symbol>
+</svg>
+
+<div class="demo-bar">Anteprima del sito — testi, numeri e mici sono di esempio, si sostituiscono con quelli veri</div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <img class="brand-logo" src="assets/logo-marchio.svg" width="1050" height="473" alt="" aria-hidden="true">
+      <span style="display:block">
+        <b><i>A.</i>mici per la vita</b>
+        <span>La Casa Felina</span>
+      </span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#mici">I mici</a>
+      <a href="#galleria">Foto</a>
+      <a href="#adozione">Adottare</a>
+      <a href="#guida">La Casa Felina</a>
+      <a href="#aiuto">Aiutaci</a>
+      <a href="#contatti">Contatti</a>
+      <a class="btn btn-rosa btn-sm" href="#aiuto">Sostienici</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="mano">Da dieci anni apriamo la porta a chi non ce l'ha</p>
+      <h1>Qui i mici aspettano<br>la loro persona.</h1>
+      <p class="lead">Siamo un gattile di volontari. Accogliamo gatti abbandonati o feriti, li curiamo e li accompagniamo fino alla casa giusta — senza fretta, finché non è davvero quella giusta.</p>
+      <div class="cta-row">
+        <a class="btn btn-rosa" href="#mici">Conosci i mici in adozione</a>
+        <a class="btn btn-vuoto" href="#aiuto">Come darci una mano</a>
+      </div>
+      <p class="hero-note">
+        <svg aria-hidden="true" style="color:var(--rosa)"><use href="#i-cuore"/></svg>
+        Una quarantina di gatti sono ospiti in questo momento. Ognuno ha un nome, una storia e una scheda.
+      </p>
+    </div>
+    <div class="hero-art">
+      <svg class="doodle d1" viewBox="0 0 40 36" aria-hidden="true"><use href="#i-cuore"/></svg>
+      <svg class="doodle d2" viewBox="0 0 40 40" aria-hidden="true" style="color:var(--salvia-chiaro)"><use href="#i-zampa"/></svg>
+      <svg class="doodle d3" viewBox="0 0 40 36" aria-hidden="true"><use href="#i-cuore"/></svg>
+      <figure class="hero-scatto">
+        <img src="immagini/gattino-occhi-azzurri.jpg" width="1200" height="1126" alt="Un gattino tigrato della Casa Felina guarda verso l'obiettivo">
+        <figcaption>Casa Felina, Brescia</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<svg class="onda" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 62 C 180 8, 350 100, 560 66 C 790 28, 980 96, 1180 60 C 1290 40, 1370 46, 1440 34 L1440 110 L0 110 Z" fill="#6B7A52"/>
+</svg>
+
+<!-- ====== NUMERI ====== -->
+<section class="su-salvia" style="padding:26px 0 54px">
+  <div class="wrap numeri">
+    <div><b><i>oltre</i>300</b><span>mici accompagnati a casa</span></div>
+    <div><b><i>circa</i>40</b><span>ospiti in media, ogni giorno</span></div>
+    <div><b><i>circa</i>15</b><span>volontari, tutti i giorni</span></div>
+    <div><b><i>nati nel</i>2016</b><span>e non ci siamo più fermati</span></div>
+  </div>
+</section>
+
+<svg class="onda" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 30 C 220 84, 420 4, 660 42 C 900 80, 1120 20, 1440 52 L1440 90 L0 90 Z" fill="#F7F1E4"/>
+  <path d="M0 30 C 220 84, 420 4, 660 42 C 900 80, 1120 20, 1440 52" fill="none" stroke="#6B7A52" stroke-width="0"/>
+</svg>
+
+<!-- ====== CHI SIAMO ====== -->
+<section class="sez attaccata" id="chi">
+  <div class="wrap duecol">
+    <div>
+      <h2>Non un rifugio, una casa di passaggio</h2>
+      <p class="intro">La Casa Felina è una stanza grande, luminosa, con mensole alle pareti e finestre che danno sul giardino. I gatti non stanno in gabbia: vivono insieme, scelgono dove dormire e imparano di nuovo a fidarsi delle persone.</p>
+      <p class="intro">Ci occupiamo anche delle colonie feline della città: sterilizzazioni, cure, cibo, e il censimento che permette di tenerle stabili nel tempo. Tutto quello che facciamo è sostenuto da donazioni e da chi ci dedica qualche ora.</p>
+    </div>
+    <div class="valori">
+      <div class="valore">
+        <span class="pit"><svg aria-hidden="true"><use href="#i-cure"/></svg></span>
+        <div>
+          <h3>Prima le cure</h3>
+          <p>Ogni gatto arriva con una visita, i vaccini, il test FIV/FeLV, la sterilizzazione e il microchip. Nessuno esce da qui senza.</p>
+        </div>
+      </div>
+      <div class="valore">
+        <span class="pit"><svg aria-hidden="true"><use href="#i-casa"/></svg></span>
+        <div>
+          <h3>Abbinamenti, non consegne</h3>
+          <p>Chiediamo com'è la vostra casa e la vostra giornata, perché un micio timido e una famiglia con tre bambini raramente funzionano.</p>
+        </div>
+      </div>
+      <div class="valore">
+        <span class="pit"><svg aria-hidden="true"><use href="#i-mani"/></svg></span>
+        <div>
+          <h3>Ci siamo anche dopo</h3>
+          <p>Dopo l'adozione restiamo raggiungibili: per un dubbio sulla lettiera, per una dieta, per una notte storta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== GALLERIA ====== -->
+<section class="sez" id="galleria">
+  <div class="wrap">
+    <h2>Un giorno alla Casa Felina</h2>
+    <p class="intro">Fotografie vere, scattate qui dentro: gatti che sono ospiti adesso e altri che lo sono stati e oggi hanno una famiglia. Non sono schede di adozione — i mici in cerca di casa sono più sotto.</p>
+    <div class="galleria">
+      <figure><img src="immagini/cucciolata-trasportino.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Cinque gattini appena arrivati, stretti insieme dentro un trasportino"></figure>
+      <figure><img src="immagini/gatti-sul-tiragraffi.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Quattro gatti accucciati sui ripiani del tiragraffi"></figure>
+      <figure><img src="immagini/gattini-in-piedi.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Due gattini alzati sulle zampe posteriori mentre giocano"></figure>
+      <figure><img src="immagini/due-tigrati-cuccia.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Due gatti tigrati affacciati dall'apertura di una cuccia"></figure>
+      <figure><img src="immagini/gatta-sul-cuscino.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Una gatta tigrata e bianca accucciata su un cuscino a pois"></figure>
+      <figure><img src="immagini/due-gattini-mensola.jpg" width="1200" height="1124" loading="lazy" decoding="async" alt="Due gattini fratelli su una mensola, uno in piedi e uno sdraiato"></figure>
+      <figure><img src="immagini/gattini-alla-rete.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Due gattini grigi affacciati alla rete del giardino"></figure>
+      <figure><img src="immagini/gattino-grigio-tiragraffi.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Un gattino grigio e bianco in piedi accanto al tiragraffi"></figure>
+      <figure><img src="immagini/gattino-grigio-sdraiato.jpg" width="1200" height="1126" loading="lazy" decoding="async" alt="Un gattino grigio sdraiato su un tappetino di iuta"></figure>
+      <figure><img src="immagini/gattino-affacciato.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Un gattino grigio si sporge dal ripiano più alto del tiragraffi"></figure>
+      <figure><img src="immagini/gattino-tigrato-tiragraffi.jpg" width="1200" height="1126" loading="lazy" decoding="async" alt="Un gattino tigrato cammina tra le colonne del tiragraffi"></figure>
+      <figure><img src="immagini/gatto-bianco-nero.jpg" width="1200" height="1200" loading="lazy" decoding="async" alt="Un gatto bianco e nero adulto accucciato su un mobile"></figure>
+    </div>
+    <p class="gall-nota">Tutte le foto sono dell'associazione. Ne arrivano di nuove ogni settimana: le pubblichiamo anche su Instagram e Facebook.</p>
+  </div>
+</section>
+
+<!-- ====== MICI ====== -->
+<section class="sez su-panna" id="mici">
+  <div class="wrap">
+    <h2>I mici in cerca di casa</h2>
+    <p class="intro">Sono qui tutti, con carattere e bisogni scritti sinceramente. Se qualcuno vi convince, scrivete: si comincia sempre con una chiacchierata.</p>
+
+    <div class="filtri" role="group" aria-label="Filtra i gatti">
+      <button class="chip" data-f="tutti" aria-pressed="true">Tutti</button>
+      <button class="chip" data-f="cuccioli" aria-pressed="false">Cuccioli</button>
+      <button class="chip" data-f="adulti" aria-pressed="false">Adulti</button>
+      <button class="chip" data-f="senior" aria-pressed="false">Nonnetti</button>
+      <button class="chip" data-f="coppie" aria-pressed="false">Da adottare in coppia</button>
+      <button class="chip" data-f="speciali" aria-pressed="false">Cure speciali</button>
+    </div>
+
+    <div class="griglia" id="griglia">
+
+      <article class="gatto" data-cat="adulti">
+        <div class="ritratto" style="--bg:#EAE0D2">
+          <span class="tag">Qui da 4 mesi</span>
+          <svg class="zampa a" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-zampa"/></svg>
+          <svg class="faccia" viewBox="0 0 100 100" style="--fur:#E4D3C0;--riga:#BFA88D;--orecchio:#EFCFD2" role="img" aria-label="Nina, gatta tigrata chiara"><use href="#i-faccia"/></svg>
+        </div>
+        <div class="testo">
+          <h3>Nina <small>femmina · 2 anni</small></h3>
+          <p>Ti studia dalla mensola più alta per una settimana intera. Poi decide che sei affidabile e non scende più dal divano.</p>
+          <a class="btn btn-salvia btn-sm" href="#contatti">Voglio conoscerla</a>
+        </div>
+      </article>
+
+      <article class="gatto" data-cat="cuccioli">
+        <div class="ritratto" style="--bg:#E7EDDA">
+          <span class="tag">5 mesi</span>
+          <svg class="zampa b" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-zampa"/></svg>
+          <svg class="faccia" viewBox="0 0 100 100" style="--fur:#3F4A5C;--orecchio:#8E7A84;--naso:#D6A0A8" role="img" aria-label="Pepe, gattino nero"><use href="#i-faccia"/></svg>
+        </div>
+        <div class="testo">
+          <h3>Pepe <small>maschio · 5 mesi</small></h3>
+          <p>Corre sulle tende, dorme dentro le scarpe. Cerca una casa con pazienza e possibilmente un altro gatto giovane con cui litigare.</p>
+          <a class="btn btn-salvia btn-sm" href="#contatti">Voglio conoscerlo</a>
+        </div>
+      </article>
+
+      <article class="gatto" data-cat="coppie">
+        <div class="ritratto" style="--bg:#F3DFE1">
+          <span class="tag">Insieme, sempre</span>
+          <svg class="faccia" viewBox="0 0 100 100" style="--fur:#FBF6EE;--riga:#D8C7B4;--orecchio:#EFCFD2" role="img" aria-label="Ombra e Luna, due gatte bianche"><use href="#i-faccia"/></svg>
+        </div>
+        <div class="testo">
+          <h3>Ombra e Luna <small>femmine · 3 anni</small></h3>
+          <p>Sorelle, cresciute in un box di cantina. Si lavano a vicenda e dormono attaccate: separarle sarebbe crudele, si adottano in due.</p>
+          <a class="btn btn-salvia btn-sm" href="#contatti">Voglio conoscerle</a>
+        </div>
+      </article>
+
+      <article class="gatto" data-cat="speciali">
+        <div class="ritratto" style="--bg:#E4E8D6">
+          <span class="tag">FIV positivo</span>
+          <svg class="zampa a" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-zampa"/></svg>
+          <svg class="faccia" viewBox="0 0 100 100" style="--fur:#C9713F;--riga:#9E5228;--orecchio:#EFCFD2" role="img" aria-label="Milo, gatto rosso"><use href="#i-faccia"/></svg>
+        </div>
+        <div class="testo">
+          <h3>Milo <small>maschio · 7 anni</small></h3>
+          <p>FIV positivo, il che vuol dire solo una cosa: vita in casa e controlli regolari. Per il resto è il gatto più affettuoso che abbiamo.</p>
+          <a class="btn btn-salvia btn-sm" href="#contatti">Voglio conoscerlo</a>
+        </div>
+      </article>
+
+      <article class="gatto" data-cat="cuccioli">
+        <div class="ritratto" style="--bg:#EFE3CE">
+          <span class="tag">6 mesi</span>
+          <svg class="faccia" viewBox="0 0 100 100" style="--fur:#D9C8A8;--riga:#B49B76;--orecchio:#EFCFD2" role="img" aria-label="Zoe, gattina crema"><use href="#i-faccia"/></svg>
+        </div>
+        <div class="testo">
+          <h3>Zoe <small>femmina · 6 mesi</small></h3>
+          <p>Trovata dentro un motore a due settimane, allattata col biberon dai volontari. Non ha paura di niente e di nessuno.</p>
+          <a class="btn btn-salvia btn-sm" href="#contatti">Voglio conoscerla</a>
+        </div>
+      </article>
+
+      <article class="gatto" data-cat="senior">
+        <div class="ritratto" style="--bg:#DFE5EC">
+          <span class="tag">Qui da 2 anni</span>
+          <svg class="zampa b" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-zampa"/></svg>
+          <svg class="faccia" viewBox="0 0 100 100" style="--fur:#B9BFC7;--riga:#8B929C;--orecchio:#EFCFD2" role="img" aria-label="Otto, gatto grigio"><use href="#i-faccia"/></svg>
+        </div>
+        <div class="testo">
+          <h3>Otto <small>maschio · 11 anni</small></h3>
+          <p>Ha perso la sua signora e da allora aspetta vicino alla porta. Chiede un termosifone, due pasti e una casa senza rumore.</p>
+          <a class="btn btn-salvia btn-sm" href="#contatti">Voglio conoscerlo</a>
+        </div>
+      </article>
+
+      <article class="gatto" data-cat="adulti">
+        <div class="ritratto" style="--bg:#E9E1EC">
+          <span class="tag">Solo con adulti</span>
+          <svg class="faccia" viewBox="0 0 100 100" style="--fur:#5C6470;--riga:#3E4550;--orecchio:#D8B7BC" role="img" aria-label="Briciola, gatta grigio scuro"><use href="#i-faccia"/></svg>
+        </div>
+        <div class="testo">
+          <h3>Briciola <small>femmina · 4 anni</small></h3>
+          <p>Diffidente per ottimi motivi. Con calma arriva a farsi grattare la testa, ma decide lei quando: cerca una casa tranquilla.</p>
+          <a class="btn btn-salvia btn-sm" href="#contatti">Voglio conoscerla</a>
+        </div>
+      </article>
+
+      <article class="gatto" data-cat="speciali senior">
+        <div class="ritratto" style="--bg:#E7EEE2">
+          <span class="tag">Terapia quotidiana</span>
+          <svg class="zampa a" viewBox="0 0 40 40" aria-hidden="true"><use href="#i-zampa"/></svg>
+          <svg class="faccia" viewBox="0 0 100 100" style="--fur:#EBE3D6;--riga:#C98A63;--orecchio:#EFCFD2" role="img" aria-label="Gigi, gatto bianco e rosso"><use href="#i-faccia"/></svg>
+        </div>
+        <div class="testo">
+          <h3>Gigi <small>maschio · 9 anni</small></h3>
+          <p>Renale, con una pastiglia al giorno e crocchette dedicate. Se questo non vi spaventa, vi restituisce fusa da fermare il tempo.</p>
+          <a class="btn btn-salvia btn-sm" href="#contatti">Voglio conoscerlo</a>
+        </div>
+      </article>
+
+    </div>
+    <p class="vuoto-msg" id="vuoto" hidden>Nessun micio in questa categoria oggi. Prova con "Tutti" — o scrivici, arrivano ogni settimana.</p>
+  </div>
+</section>
+
+<!-- ====== ADOZIONE ====== -->
+<section class="sez" id="adozione">
+  <div class="wrap">
+    <h2>Come funziona l'adozione</h2>
+    <p class="intro">Quattro passaggi, di solito due o tre settimane. Serve tempo perché l'abbinamento regga per i prossimi quindici anni.</p>
+    <div class="passi">
+      <span class="linea" aria-hidden="true"></span>
+      <div class="passo">
+        <span class="num">1</span>
+        <h3>Ci scrivete</h3>
+        <p>Dal modulo qui sotto o su <a href="https://www.instagram.com/a.miciperlavitabrescia/" target="_blank" rel="noopener" style="text-decoration:underline">Instagram</a>. Raccontateci chi siete, come vivete e quale micio vi ha colpito.</p>
+      </div>
+      <div class="passo">
+        <span class="num">2</span>
+        <h3>Venite in visita</h3>
+        <p>Un'ora alla Casa Felina, seduti per terra. I gatti si avvicinano da soli: spesso sceglie lui, non voi.</p>
+      </div>
+      <div class="passo">
+        <span class="num">3</span>
+        <h3>Preparate casa</h3>
+        <p>Vi diciamo cosa serve davvero e cosa no. Zanzariere alle finestre: su quelle non transigiamo.</p>
+      </div>
+      <div class="passo">
+        <span class="num">4</span>
+        <h3>Il micio arriva</h3>
+        <p>Firma dell'affido, libretto sanitario, vademecum e il nostro numero. Ci sentiamo dopo una settimana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="onda" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 44 C 200 96, 430 2, 690 40 C 940 76, 1160 8, 1440 44 L1440 96 L0 96 Z" fill="#FDFAF4"/>
+</svg>
+
+<!-- ====== GUIDA ====== -->
+<section class="sez attaccata su-panna" id="guida">
+  <div class="wrap guida">
+    <div class="card-guida">
+      <span class="script">Benvenuto</span>
+      <h3>a casa!</h3>
+      <p>La guida che consegniamo a ogni famiglia: i primi giorni, la lettiera, il cibo, il veterinario, la casa a prova di gatto. Quattro pagine, niente teoria.</p>
+      <a class="btn btn-rosa" href="#contatti">Scarica la guida (PDF)</a>
+    </div>
+    <div>
+      <h2>Le domande che ci fanno tutti</h2>
+      <p class="intro">Le risposte brevi sono qui. Quelle lunghe ve le diamo di persona, con il micio in braccio.</p>
+      <div class="acc" id="acc">
+        <div class="acc-item">
+          <h3><button class="acc-tit" aria-expanded="false">I primi tre giorni non esce da sotto il letto</button></h3>
+          <div class="acc-corpo"><div><p>È normale ed è un buon segno: si sta orientando. Tenetelo in una stanza sola con lettiera, acqua e cibo, parlate a voce bassa e non tiratelo fuori. Uscirà di notte, quando la casa è silenziosa, e in una settimana amplierà il territorio da solo.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-tit" aria-expanded="false">Quanti soldi servono in un anno?</button></h3>
+          <div class="acc-corpo"><div><p>Fra cibo di qualità, lettiera, antiparassitari e un controllo annuale dal veterinario, mettete in conto 500-700 euro. A cui aggiungere un fondo per gli imprevisti: un'urgenza notturna costa facilmente qualche centinaio di euro.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-tit" aria-expanded="false">Meglio uno o due gatti?</button></h3>
+          <div class="acc-corpo"><div><p>Se state fuori tutto il giorno, due. I gattini cresciuti in coppia si stancano a vicenda e distruggono molto meno la casa. I gatti adulti che hanno sempre vissuto soli, invece, spesso preferiscono restare gli unici: ve lo diciamo caso per caso.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-tit" aria-expanded="false">Posso adottare se ho un cane o dei bambini piccoli?</button></h3>
+          <div class="acc-corpo"><div><p>Sì, scegliendo il micio giusto. Serve un gatto già abituato al caos e una casa con vie di fuga in alto, dove possa sottrarsi quando ne ha abbastanza. Con i bambini la regola è una: il gatto non si insegue mai.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-tit" aria-expanded="false">Cosa vuol dire FIV o FeLV positivo?</button></h3>
+          <div class="acc-corpo"><div><p>Sono due virus dei gatti, non trasmissibili all'uomo né ad altre specie. Un gatto FIV+ vive in casa, senza contatti con gatti negativi, e può arrivare tranquillamente a tarda età. Serve un veterinario attento e controlli più frequenti.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-tit" aria-expanded="false">Ho trovato una gatta con i cuccioli in giardino</button></h3>
+          <div class="acc-corpo"><div><p>Non toccate i piccoli e non spostateli: la mamma è quasi sempre lì vicino e resta la loro miglior possibilità. Chiamateci, veniamo a valutare insieme. Se serve, organizziamo il recupero e la sterilizzazione della mamma.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="onda" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 36 C 230 90, 460 6, 700 38 C 950 72, 1180 12, 1440 40 L1440 96 L0 96 Z" fill="#6B7A52"/>
+</svg>
+
+<!-- ====== AIUTO ====== -->
+<section class="sez attaccata su-salvia" id="aiuto">
+  <div class="wrap">
+    <h2>Dare una mano, anche senza adottare</h2>
+    <p class="intro" style="color:#EDEFE2">Non riceviamo fondi pubblici. Quello che entra diventa crocchette, farmaci e sterilizzazioni — lo pubblichiamo ogni tre mesi sui social.</p>
+    <div class="aiuti">
+      <div class="aiuto">
+        <span class="costo">15 €</span>
+        <h3>Una settimana di cibo</h3>
+        <p>Copre umido e crocchette per quattro gatti adulti. È la donazione che ci serve più spesso.</p>
+      </div>
+      <div class="aiuto">
+        <span class="costo">80 €</span>
+        <h3>Una sterilizzazione</h3>
+        <p>Una gatta sterilizzata sono decine di gattini che non nasceranno per strada l'anno prossimo.</p>
+      </div>
+      <div class="aiuto">
+        <span class="costo">5×1000</span>
+        <h3>Non costa nulla</h3>
+        <p>Basta la firma nel riquadro del volontariato e il nostro codice fiscale nella dichiarazione dei redditi.</p>
+      </div>
+      <div class="aiuto">
+        <span class="costo">2 ore</span>
+        <h3>Diventa volontario</h3>
+        <p>Pulizie, coccole ai timidi, trasporti dal veterinario, banchetti. Si comincia con un turno di prova.</p>
+      </div>
+      <div class="aiuto">
+        <span class="costo">Casa</span>
+        <h3>Stallo temporaneo</h3>
+        <p>Ospitare per qualche settimana un cucciolo o un gatto in convalescenza. Cibo e spese veterinarie le mettiamo noi.</p>
+      </div>
+      <div class="aiuto">
+        <span class="costo">Voce</span>
+        <h3>Parlane in giro</h3>
+        <p>Condividere la scheda di un micio funziona: metà delle adozioni parte da un post girato a un amico.</p>
+      </div>
+    </div>
+    <div class="cta-row" style="margin-top:34px">
+      <a class="btn btn-rosa" href="#contatti">Voglio donare</a>
+      <a class="btn btn-vuoto" style="color:#fff;border-color:rgba(255,255,255,.6)" href="#contatti">Voglio fare il volontario</a>
+    </div>
+  </div>
+</section>
+
+<svg class="onda" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 40 C 210 92, 470 4, 720 42 C 970 80, 1200 14, 1440 46 L1440 96 L0 96 Z" fill="#F7F1E4"/>
+</svg>
+
+<!-- ====== STORIE ====== -->
+<section class="sez attaccata">
+  <div class="wrap">
+    <h2>Come è andata a finire</h2>
+    <p class="intro">Le foto che ci arrivano mesi dopo, quando ormai il gatto ha preso possesso del divano.</p>
+    <div class="storie">
+      <div class="storia">
+        <p>«Avevo chiesto un gatto tranquillo. Mi hanno guardato e mi hanno dato Kira, che tranquilla non è mai stata un giorno. Avevano ragione loro.»</p>
+        <div class="firma">
+          <svg viewBox="0 0 100 100" aria-hidden="true" style="--fur:#D9C8A8;--riga:#B49B76"><use href="#i-faccia"/></svg>
+          <span><b>Marta</b><small>ha adottato Kira nel 2023</small></span>
+        </div>
+      </div>
+      <div class="storia">
+        <p>«Mio padre diceva di non sopportare i gatti. Ora Otto dorme sulla sua poltrona e lui compra l'umido buono di nascosto.»</p>
+        <div class="firma">
+          <svg viewBox="0 0 100 100" aria-hidden="true" style="--fur:#B9BFC7;--riga:#8B929C"><use href="#i-faccia"/></svg>
+          <span><b>Giulia</b><small>famiglia adottiva dal 2022</small></span>
+        </div>
+      </div>
+      <div class="storia">
+        <p>«Ho preso Milo sapendo che è FIV positivo. Tre anni dopo sta benissimo, e io ho imparato che quella sigla spaventa più del dovuto.»</p>
+        <div class="firma">
+          <svg viewBox="0 0 100 100" aria-hidden="true" style="--fur:#C9713F;--riga:#9E5228"><use href="#i-faccia"/></svg>
+          <span><b>Stefano</b><small>volontario e adottante</small></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTATTI ====== -->
+<section class="sez su-rosa" id="contatti">
+  <div class="wrap contatti">
+    <div>
+      <h2>Veniteci a trovare</h2>
+      <p class="intro">La Casa Felina si visita su appuntamento: così troviamo qualcuno che vi accompagni e i gatti non si spaventano.</p>
+      <div class="info-riga"><svg aria-hidden="true"><use href="#i-pin"/></svg><span><b>La Casa Felina</b>Via Rose, 12/a — 25126 Brescia (BS)</span></div>
+      <div class="info-riga"><svg aria-hidden="true"><use href="#i-ora"/></svg><span><b>Quando siamo aperti</b>Tutti i giorni dalle 18:00 alle 20:00, su appuntamento</span></div>
+      <div class="info-riga"><svg aria-hidden="true"><use href="#i-tel"/></svg><span><b>Telefono e WhatsApp</b><a href="tel:+393926212119" style="text-decoration:underline">392 621 2119</a> · <a href="https://wa.me/393926212119" target="_blank" rel="noopener" style="text-decoration:underline">scrivici su WhatsApp</a></span></div>
+      <div class="info-riga"><svg aria-hidden="true"><use href="#i-mail"/></svg><span><b>Email</b><a href="mailto:a.miciperlavitabrescia@gmail.com" style="text-decoration:underline">a.miciperlavitabrescia@gmail.com</a></span></div>
+      <div class="info-riga"><svg aria-hidden="true"><use href="#i-ig"/></svg><span><b>Instagram</b><a href="https://www.instagram.com/a.miciperlavitabrescia/" target="_blank" rel="noopener" style="text-decoration:underline">@a.miciperlavitabrescia</a> — i mici nuovi li pubblichiamo lì per primi</span></div>
+      <div class="info-riga" style="border:0"><svg aria-hidden="true"><use href="#i-cuore"/></svg><span><b>Per donare</b>IBAN IT88 G030 6909 6061 0000 0139 451 · 5×1000 con codice fiscale 00000000000</span></div>
+    </div>
+
+    <div>
+      <form id="modulo" novalidate>
+        <h3 style="margin-bottom:14px">Scriveteci due righe</h3>
+        <label for="nome">Come vi chiamate</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Nome e cognome">
+
+        <label for="email">Email o telefono</label>
+        <input id="email" name="email" type="text" autocomplete="email" placeholder="Dove possiamo rispondervi">
+
+        <label for="motivo">Di cosa si tratta</label>
+        <select id="motivo" name="motivo">
+          <option>Vorrei adottare un micio</option>
+          <option>Vorrei fare il volontario</option>
+          <option>Posso offrire uno stallo</option>
+          <option>Ho trovato un gatto in difficoltà</option>
+          <option>Altro</option>
+        </select>
+
+        <label for="msg">Raccontateci</label>
+        <textarea id="msg" name="msg" placeholder="Chi c'è in casa, se avete già animali, quale micio vi ha colpito…"></textarea>
+
+        <button type="submit" class="btn btn-salvia">Invia il messaggio</button>
+        <p class="esito" id="esito" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-logo"><img src="assets/logo-completo.svg" width="1080" height="682" alt="Logo dell'Associazione A.mici per la vita"></span>
+        <p>A.mici per la vita Brescia ODV — La Casa Felina. Volontari, gatti e un bel po' di crocchette.</p>
+      </div>
+      <div>
+        <h4>Il sito</h4>
+        <a href="#mici">I mici in adozione</a>
+        <a href="#adozione">Come si adotta</a>
+        <a href="#guida">Benvenuto a casa</a>
+        <a href="#aiuto">Sostienici</a>
+      </div>
+      <div>
+        <h4>Contatti</h4>
+        <a href="#contatti">Dove siamo</a>
+        <a href="#contatti">Orari di visita</a>
+        <a href="https://www.instagram.com/a.miciperlavitabrescia/" target="_blank" rel="noopener">Instagram</a>
+        <a href="#contatti">Donazioni e 5×1000</a>
+      </div>
+    </div>
+    <div class="chiusura">
+      <span>A.mici per la vita Brescia ODV · Organizzazione di volontariato · C.F. 00000000000 · Via Rose 12/a, Brescia</span>
+      <span>Anteprima grafica del sito — contenuti di esempio</span>
+      <span class="credito">Sito realizzato gratuitamente da <a href="https://www.zdrilichwebstudios.it/" target="_blank" rel="noopener">Zdrilich Web Studios</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// menu mobile
+const hamb = document.getElementById('hamb');
+const menu = document.getElementById('menu');
+hamb.addEventListener('click', () => {
+  const aperto = menu.classList.toggle('aperto');
+  hamb.setAttribute('aria-expanded', aperto);
+  hamb.setAttribute('aria-label', aperto ? 'Chiudi il menu' : 'Apri il menu');
+});
+menu.addEventListener('click', e => {
+  if (e.target.tagName === 'A') { menu.classList.remove('aperto'); hamb.setAttribute('aria-expanded','false'); }
+});
+
+// filtri gatti
+const chips = document.querySelectorAll('.chip');
+const gatti = document.querySelectorAll('.gatto');
+const vuoto = document.getElementById('vuoto');
+chips.forEach(chip => chip.addEventListener('click', () => {
+  chips.forEach(c => c.setAttribute('aria-pressed', c === chip));
+  const f = chip.dataset.f;
+  let visibili = 0;
+  gatti.forEach(g => {
+    const ok = f === 'tutti' || g.dataset.cat.split(' ').includes(f);
+    g.classList.toggle('nascosto', !ok);
+    if (ok) visibili++;
+  });
+  vuoto.hidden = visibili > 0;
+}));
+
+// accordion
+document.querySelectorAll('.acc-tit').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.acc-item');
+    const aperto = item.classList.toggle('aperto');
+    btn.setAttribute('aria-expanded', aperto);
+  });
+});
+
+// modulo (demo)
+const modulo = document.getElementById('modulo');
+const esito = document.getElementById('esito');
+modulo.addEventListener('submit', e => {
+  e.preventDefault();
+  const nome = document.getElementById('nome').value.trim();
+  const rif  = document.getElementById('email').value.trim();
+  if (!nome || !rif) {
+    esito.textContent = 'Manca il nome o un recapito: senza non possiamo rispondervi.';
+    esito.style.background = '#F6DADD';
+  } else {
+    esito.textContent = 'Grazie ' + nome + '! In questa anteprima il messaggio non parte davvero — nel sito online arriverebbe subito alla casella dell\'associazione.';
+    esito.style.background = '#E4EBD4';
+  }
+  esito.classList.add('on');
+});
+</script>
+</body>
+</html>
