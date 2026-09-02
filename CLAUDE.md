@@ -24,9 +24,10 @@ Tutti i contenuti sono di esempio e la pagina lo dichiara nella barra in cima
   coerente con la loro email e i loro profili social. "Brescia" serve a distinguerli dagli
   altri "amici per la vita", ma non fa parte della denominazione legale: non aggiungerlo
   accanto al codice fiscale.
-- Il codice fiscale `98186780171` e l'IBAN sono **confermati**: il 2 settembre 2026
-  l'associazione ha fornito il proprio biglietto con i dati ufficiali, e coincidono
-  carattere per carattere con quelli nel sito.
+- Codice fiscale, partita IVA, IBAN e sede sono **confermati** dall'associazione
+  (2 settembre 2026): `98186780171` vale sia da codice fiscale sia da partita IVA — sono
+  lo stesso numero — e la sede legale coincide con quella operativa della Casa Felina,
+  Via Rose 12/a, 25126 Brescia.
 
 ## Struttura
 
