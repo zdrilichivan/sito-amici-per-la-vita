@@ -17,10 +17,9 @@ Tutti i contenuti sono di esempio e la pagina lo dichiara nella barra in cima
 - I recapiti nella sezione contatti (indirizzo, telefono, email, Instagram e **IBAN**) sono
   quelli **veri** dell'associazione. Non modificarli, non completarli a intuito e non
   aggiungerne altri: se serve un dato che non c'è, chiederlo.
-- **Da validare prima della messa online:** il codice fiscale `98186780171` (2 settembre 2026)
-  è stato trovato cercando, non fornito dall'associazione. Ha la cifra di controllo corretta,
-  ma questo prova solo che è ben formato, non che sia il loro. Su quel numero passa il 5×1000:
-  se è di un altro ente le donazioni finiscono altrove. Va fatto confermare dal presidente.
+- Il codice fiscale `98186780171` e l'IBAN sono **confermati**: il 2 settembre 2026
+  l'associazione ha fornito il proprio biglietto con i dati ufficiali, e coincidono
+  carattere per carattere con quelli nel sito.
 
 ## Struttura
 
