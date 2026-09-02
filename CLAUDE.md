@@ -14,20 +14,34 @@ Tutti i contenuti sono di esempio e la pagina lo dichiara nella barra in cima
   quanti ne sono stati adottati). Si è scelto di usare valori "morbidi" — *oltre 300*,
   *circa 40*, *circa 15* — proprio per non dover aggiornare la pagina di continuo e non
   mostrare un dato palesemente vecchio.
-- Recapiti, IBAN, orari e indirizzo nella sezione contatti sono segnaposto: vanno
-  sostituiti dall'associazione, non riempiti di fantasia.
+- I recapiti nella sezione contatti (indirizzo, telefono, email, Instagram e **IBAN**) sono
+  quelli **veri** dell'associazione. Non modificarli, non completarli a intuito e non
+  aggiungerne altri: se serve un dato che non c'è, chiederlo. Il codice fiscale è invece
+  ancora un segnaposto (undici zeri).
 
 ## Struttura
 
 Un solo file, senza build e senza dipendenze: si apre direttamente nel browser.
 
 ```
-amici-per-la-vita.html   tutta la pagina: HTML + CSS + JS inline
+index.html               tutta la pagina: HTML + CSS + JS inline
 assets/                  logo in varie versioni (svg preferito, jpg di riserva)
 immagini/                foto per il web, lato lungo 1200px
 immagini/originali/      le foto come arrivate dall'associazione, mai referenziate dal sito
 logo.jpg                 originale del logo
+robots.txt               tiene l'anteprima fuori dai motori di ricerca
 ```
+
+## Pubblicazione
+
+Il sito è su GitHub Pages, dal branch `main` del repo `zdrilichivan/sito-amici-per-la-vita`.
+È un'**anteprima non ufficiale**: non è il sito dell'associazione e non è stato approvato da
+loro. Per questo la pagina ha `<meta name="robots" content="noindex…">` e c'è un `robots.txt`
+che blocca tutti i crawler — non rimuoverli.
+
+La sezione contatti contiene **recapiti veri** dell'associazione, IBAN compreso. Prima di
+qualsiasi modifica lì, chiedere: sono dati di un ente reale su una pagina che l'ente non
+controlla.
 
 ### Foto
 
@@ -72,7 +86,7 @@ preciso di foto perché il layout stia in piedi.
 Da `file://` le immagini si vedono; per una prova fedele conviene comunque un server:
 
 ```bash
-python3 -m http.server 8777    # poi http://localhost:8777/amici-per-la-vita.html
+python3 -m http.server 8777    # poi http://localhost:8777/
 ```
 
 Da controllare dopo modifiche al layout: nessuno scroll orizzontale, il pulsante
