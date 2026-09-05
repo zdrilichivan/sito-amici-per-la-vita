@@ -58,6 +58,24 @@ finché il sito non ha i dati reali dei gatti. È **esclusa da GitHub Pages** tr
 `_config.yml`: resta versionata ma non viene servita dall'anteprima. I suoi percorsi sono
 relativi alla radice del repo, quindi non va spostata in una sottocartella senza correggerli.
 
+### Pubblicazione sul dominio (Cloudflare)
+
+Il sito vero sta su **Cloudflare Pages**, progetto `amiciperlavitabrescia`
+(https://amiciperlavitabrescia.pages.dev). Si pubblica così:
+
+```bash
+./build.sh                                             # prepara dist/
+wrangler pages deploy dist --project-name=amiciperlavitabrescia --branch=main
+```
+
+`build.sh` NON pubblica il repo così com'è: prende `work-in-progress.html`, lo rinomina
+`index.html` e gli toglie il `<meta name="robots">` — sul dominio la pagina di attesa deve
+essere indicizzabile. Copia `404.html`, `assets/` e **solo** le immagini web: gli originali
+in `immagini/originali/` restano fuori dal sito pubblico. `dist/` è generata, non versionata.
+
+Il `404.html` non è un vezzo: senza, Pages risponde `200` con la home a qualsiasi indirizzo
+sbagliato, e i motori indicizzerebbero URL inesistenti come copie della home.
+
 ### Quando si passa al dominio vero
 
 1. Togliere `robots.txt` e il `<meta name="robots">` da `index.html`: servono solo a tenere
