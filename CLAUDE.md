@@ -27,3 +27,11 @@ Denominazione legale nel footer; altrove A.mici per la vita Brescia ODV.
 
 Controllare immagini, link interni, menu mobile, FAQ, contatti diretti e assenza di overflow.
 La pagina 404 deve restituire HTTP 404. Mantenere palette, font e layout esistenti.
+
+## Dominio Pages
+
+Il dominio `amiciperlavitabrescia.pages.dev` e i suoi sottodomini reindirizzano al dominio
+ufficiale `https://amiciperlavitabrescia.it/` tramite Cloudflare Bulk Redirects (301).
+Elenco: `amici_pages_to_official`. Regola: `A.mici: da Pages al sito ufficiale`.
+Sono conservati percorsi e query string. La regola è a livello account, fuori dal codice.
+Non eliminare il progetto Pages: serve anche il dominio ufficiale.
