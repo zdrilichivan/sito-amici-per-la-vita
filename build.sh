@@ -1,21 +1,18 @@
 #!/bin/bash
 # Prepara la cartella dist/ da pubblicare su Cloudflare Pages.
 #
-# Finché il sito non ha i dati veri dei gatti, alla radice del dominio va la
-# pagina di attesa: qui diventa index.html, e le si toglie il meta robots
-# perché sul dominio vero deve essere indicizzabile (al contrario
-# dell'anteprima su GitHub Pages, che resta noindex).
-#
-# Uso:  ./build.sh          poi:  wrangler pages deploy dist
+# Pubblica il sito vetrina completo. Il sorgente resta noindex per GitHub Pages;
+# solo la build sul dominio ufficiale è indicizzabile.
+# Uso: ./build.sh
 set -euo pipefail
 cd "$(dirname "$0")"
 
 rm -rf dist
 mkdir -p dist
 
-# la pagina di attesa diventa la home, senza il blocco ai motori
-sed '/name="robots"/d; /pagina temporanea: fuori dai motori/d' \
-    work-in-progress.html > dist/index.html
+# Il sito completo diventa la home, senza i blocchi ai motori
+sed '/name="robots"/d; /name="googlebot"/d; /anteprima non ufficiale: fuori dai motori/d' \
+    index.html > dist/index.html
 
 # pagina di errore: senza, Pages risponde 200 con la home a ogni indirizzo
 # sbagliato, e i motori indicizzerebbero URL fantasma
